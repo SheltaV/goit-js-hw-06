@@ -11,20 +11,25 @@ const input = document.querySelector('input')
 
 create.addEventListener('click', createBoxes)
 
-function createBoxes(amount) {
-  input.textContent = amount;
+function createBoxes() {
+  const amount = input.value;
   const items = [];
-  for (let i = 0; i <= amount; i += 1) {
+  for (let i = 1; i <= amount; i += 1) {
     const item = document.createElement("div");
     item.classList.add("item");
     item.style.backgroundColor = getRandomHexColor();
-    item.style.width = `${30}px`;
-    item.style.height = `${30}px`;
+    item.style.width = `${30 + 10 * i}px`;
+    item.style.height = `${30 + 10 * i}px`;
     items.push(item)
   }
-console.log(input.value)
   boxes.append(...items)
 }
 
+reset.addEventListener('click', removeBoxes)
 
-// console.log(createBoxes(5))
+function removeBoxes() {
+  const boxToRemove = boxes.children;
+  if (boxToRemove) {
+    boxToRemove.remove()
+  }
+}
