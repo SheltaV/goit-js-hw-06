@@ -28,8 +28,6 @@ function createBoxes() {
 reset.addEventListener('click', removeBoxes)
 
 function removeBoxes() {
-  const boxToRemove = boxes.children;
-  if (boxToRemove) {
-    boxToRemove.remove()
-  }
+  boxes.innerHTML = '';
+  input.value = '';
 }

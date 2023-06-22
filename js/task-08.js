@@ -8,7 +8,7 @@ function checkForm(evt) {
     elements: { email, password }
     } = evt.currentTarget;
     
-    if (email.value === '' && password.value === '') {
+    if (email.value === '' || password.value === '') {
         alert('All fields must be filled!');
     } else {console.log(`Email: ${email.value}, Password: ${password.value}`)}
     
