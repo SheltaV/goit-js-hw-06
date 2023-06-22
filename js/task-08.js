@@ -10,7 +10,12 @@ function checkForm(evt) {
     
     if (email.value === '' || password.value === '') {
         alert('All fields must be filled!');
-    } else {console.log(`Email: ${email.value}, Password: ${password.value}`)}
+    } else {
+        const objForm = {};
+        objForm.Email = email.value;
+        objForm.Password = password.value;
+        console.log(objForm)
+    }
     
     evt.currentTarget.reset()
 }
